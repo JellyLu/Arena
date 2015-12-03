@@ -1,5 +1,6 @@
-package entity.weapon;
+package entity.weapon.weapon;
 
+import entity.player.Player;
 import util.RandomGenerator;
 
 import java.util.Random;
@@ -12,7 +13,7 @@ public class NoWeapon extends Weapon{
     }
 
     @Override
-    public String useWeapon(){
+    public String useWeapon(Player player){
         return "";
     }
 

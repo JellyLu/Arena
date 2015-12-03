@@ -1,6 +1,6 @@
-package entityTest.weaponTest;
+package entityTest.weaponTest.armorTest;
 
-import entity.weapon.Armor;
+import entity.weapon.armor.Armor;
 import org.junit.Before;
 import org.junit.Test;
 

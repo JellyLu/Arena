@@ -3,6 +3,7 @@ package entity.player;
 import entity.weapon.damage.Damage;
 import entity.weapon.damage.NoDamage;
 import util.Constant;
+import util.IllUseWeaponException;
 
 public class Player implements Role {
 
@@ -73,11 +74,11 @@ public class Player implements Role {
         return  lifeCount >= 0;
     }
 
-    public String playerIdentifier(){
+    public String playerIdentifier() throws IllUseWeaponException{
         return String.format( "%s%s", getRole(), name);
     }
 
-    public String beAttackedPlayerIdentifier(){
+    public String beAttackedPlayerIdentifier() throws IllUseWeaponException{
         return String.format( "%s%s", getRole(), name);
     }
 
@@ -86,15 +87,11 @@ public class Player implements Role {
         return Constant.ROLE_CIVVY;
     }
 
-    public int getRoleType(){
-        return Constant.ROLE_TYPE_CIVVY;
-    }
-
     public int getLifeCount(){
         return lifeCount;
     }
 
-    public String beat( Player other ){
+    public String beat( Player other )throws IllUseWeaponException {
         return String.format( "%s攻击了%s,%s", playerIdentifier(), other.beAttackedPlayerIdentifier(), other.beAttacked( this ) );
     }
 
@@ -121,15 +118,18 @@ public class Player implements Role {
                 lifeCount -= attacker.getDamage().getBleed();
                 result += String.format("%s受到了%d点%s,%s剩余生命值:%d\n", name,attacker.getDamage().getBleed(), attacker.getDamageType(), name, lifeCount);
                 break;
+
             case  Constant.DAMAGE_TYPE_CAN_NOT_ATTACK_TWICE:
                 cannotAttackTimes = attacker.getDamage().getCannotDamageTimes();
                 result = String.format( "%s受到了%d点伤害,%s%s,%s剩余生命值:%d\n", name, loseLifeCount, name, attacker.getDamageEffect(),  name, lifeCount);
                 result += String.format("%s%s,%s眩晕还剩:%d轮\n", name, attacker.getDamageEffect(), getAttackStateLogString(attackState),attacker.getDamage().getLastAttackCount() );
                 break;
+
             case Constant.DAMAGE_TYPE_TWICE_CAN_NOT_ATTACK_ONCE:
                 cannotAttackTimes = attacker.getDamage().getCannotDamageTimes();
                 result = String.format( "%s受到了%d点伤害,%s%s,%s剩余生命值:%d\n", name, loseLifeCount, name, attacker.getDamageEffect(),  name, lifeCount);
                 break;
+
             case Constant.DAMAGE_TYPE_TRIPLE_DAMAGE:
                 lifeCount = lifeCount + loseLifeCount;
                 loseLifeCount = loseLifeCount*attacker.damage.getBeMultipleDamaged();
@@ -140,6 +140,7 @@ public class Player implements Role {
             case Constant.DAMAGE_TYPE_NO_DAMAGE:
                 result = String.format( "%s受到了%d点伤害,%s剩余生命值:%d\n", name, loseLifeCount, name, lifeCount);
                 break;
+
             default:
                 result = String.format( "%s受到了%d点伤害,%s剩余生命值:%d\n", name, loseLifeCount, name, lifeCount);
                 break;

@@ -2,15 +2,23 @@ package util;
 
 public class Constant {
 
-    //Role TYPE
+    //PLAYER Role TYPE
     public static final int ROLE_TYPE_CIVVY    = 1;
     public static final int ROLE_TYPE_SOLDIER = 2;
 
-    //ROLE
-    public static final String ROLE_CIVVY = "普通人";
-    public static final String ROLE_SOLDIER = "战士";
+    //PLAYER ROLE
+    public static final String ROLE_CIVVY    = "普通人";
+    public static final String ROLE_SOLDIER  = "战士";
+    public static final String ROLE_KNIGHT   = "骑士";
+    public static final String ROLE_ASSASSIN = "刺客";
 
-    //WEPON
+    //WEAPON ROLE
+    public static final String ROLE_LONG     = "长";
+    public static final String ROLE_MIDDLE   = "中";
+    public static final String ROLE_SHORT    = "短";
+    public static final String ROLE_DEFAULT  = "默认";
+
+    //WEAPON
     public static final String WEAPON_STICKS = "优质木棍";
     public static final String WEAPON_HAMMER = "锤";
     public static final String WEAPON_SWORD  = "剑";

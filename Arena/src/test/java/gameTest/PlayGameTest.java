@@ -2,8 +2,8 @@ package gameTest;
 
 import entity.player.Player;
 import entity.player.Soldier;
-import entity.weapon.Weapon;
 import entity.weapon.feature.PoisonFeature;
+import entity.weapon.weapon.MiddleWeapon;
 import game.PlayGame;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +35,7 @@ public class PlayGameTest {
     }
 
     @Test
-    public void should_play_game_victim_lose_when_attacker_is_powerful(){
+    public void should_play_game_victim_lose_when_attacker_is_powerful() throws Exception{
         Player attacker = new Player( "lu", 20, 20 );
         Player victim   = new Player( "yang", 18, 10 );
 
@@ -46,7 +46,7 @@ public class PlayGameTest {
     }
 
     @Test
-    public void should_play_game_victim_win_when_attacker_is_not_powerful(){
+    public void should_play_game_victim_win_when_attacker_is_not_powerful() throws Exception{
         Player attacker = new Player( "lu", 12, 10 );
         Player victim   = new Player( "yang", 20, 10 );
 
@@ -60,9 +60,10 @@ public class PlayGameTest {
     }
 
     @Test
-    public void should_play_game_soldier_win_when_soldier_use_weapon_without_feature(){
+    public void should_play_game_soldier_win_when_soldier_use_weapon_without_feature() throws Exception{
         Soldier attacker = new Soldier(  "张三", 20, 5 );
-        Weapon  weapon   = new Weapon(  "剑", 3, new RandomGenerator( new Random() ));
+        MiddleWeapon  weapon   = new MiddleWeapon(  "剑", 3, new RandomGenerator( new Random() ));
+
         attacker.wearWeapon( weapon );
         Player victim    = new Player(  "李四", 20, 8 );
 
@@ -77,22 +78,20 @@ public class PlayGameTest {
     }
 
     @Test
-    public void should_play_game_soldier_win_when_soldier_use_weapon_wit_poison_feature(){
+    public void should_play_game_soldier_win_when_soldier_use_weapon_wit_poison_feature() throws Exception{
         Player victim    = new Player(  "李四", 20, 8 );
         Soldier attacker = new Soldier(  "张三", 20, 6 );
         Random random    = mock( Random.class );
-        Weapon  weapon   = new Weapon(  "剑", 3, new RandomGenerator( random ) );
+        MiddleWeapon  weapon   = new MiddleWeapon(  "剑", 3, new RandomGenerator( random ) );
         weapon.setFeature( new PoisonFeature() );
-        attacker.wearWeapon( weapon );
 
+        attacker.wearWeapon(weapon);
+        playGame.playGame(attacker, victim);
+        when(random.nextInt(Constant.RANDOM_MAX)).thenReturn(Constant.FEATURE_DAMAGE_TIMES_POISON - 1);
 
-        playGame.playGame( attacker, victim);
-
-        when( random.nextInt(Constant.RANDOM_MAX) ).thenReturn( Constant.FEATURE_DAMAGE_TIMES_POISON - 1 );
-
-        inOrder.verify( consoleLog, times(1)).log( "战士张三用毒剑攻击了普通人李四,李四受到了9点伤害,李四中毒了,李四剩余生命值:11\n" +
-                "李四受到了2点毒性伤害,李四剩余生命值:9\n" );
-        inOrder.verify( consoleLog, times(1)).log( "普通人李四攻击了战士张三,张三受到了8点伤害,张三剩余生命值:12\n" );
+        inOrder.verify(consoleLog, times(1)).log("战士张三用毒剑攻击了普通人李四,李四受到了9点伤害,李四中毒了,李四剩余生命值:11\n" +
+                    "李四受到了2点毒性伤害,李四剩余生命值:9\n");
+        inOrder.verify(consoleLog, times(1)).log("普通人李四攻击了战士张三,张三受到了8点伤害,张三剩余生命值:12\n");
     }
 
 

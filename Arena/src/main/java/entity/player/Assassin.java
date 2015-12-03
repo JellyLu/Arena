@@ -1,24 +1,25 @@
 package entity.player;
+
 import entity.weapon.armor.Armor;
 import entity.weapon.armor.NoArmor;
 import entity.weapon.weapon.MiddleWeapon;
 import entity.weapon.weapon.NoWeapon;
+import entity.weapon.weapon.ShortWeapon;
 import entity.weapon.weapon.Weapon;
 import util.Constant;
 import util.IllUseWeaponException;
 import util.IllWeaponTypeException;
 
-public class Soldier extends Player {
-
+public class Assassin extends Player{
     private Weapon weapon;
     private Armor armor;
 
     @Override
     public String getRole(){
-        return Constant.ROLE_SOLDIER;
+        return Constant.ROLE_ASSASSIN;
     }
 
-    public Soldier(String name, int lifeCount, int bleed ){
+    public Assassin(String name, int lifeCount, int bleed ){
         super( name, lifeCount, bleed );
         weapon = NoWeapon.getInstance();
         armor  = NoArmor.getInstance();
@@ -35,7 +36,7 @@ public class Soldier extends Player {
     }
 
     @Override
-    public String beAttackedPlayerIdentifier( ) throws IllUseWeaponException {
+    public String beAttackedPlayerIdentifier( ) throws IllUseWeaponException{
         String result = super.playerIdentifier();
         if ( armor.getDefenceDamage() != 0 ){
             result += String.format( ",%s%s", getName(), armor.useArmor() );
@@ -50,7 +51,7 @@ public class Soldier extends Player {
 
     public void wearWeapon( Weapon weapon ) throws IllWeaponTypeException {
 
-        if ( weapon instanceof MiddleWeapon){
+        if ( weapon instanceof ShortWeapon || weapon instanceof MiddleWeapon) {
 
             this.weapon = weapon;
             this.damage = weapon.getFeatureDamage();
@@ -58,7 +59,7 @@ public class Soldier extends Player {
             this.bleed += weapon.getBleed();
             this.damageType = weapon.getFeature().getFeatureType();
         }else {
-            throw new IllWeaponTypeException( "战士只可以装备中武器" );
+            throw new IllWeaponTypeException( "刺客只可以装备中短武器" );
         }
     }
 
@@ -66,11 +67,9 @@ public class Soldier extends Player {
         this.armor = armor;
     }
 
-
-    private String useWeapon() throws IllUseWeaponException{
+    private String useWeapon() throws IllUseWeaponException {
         String string = weapon.useWeapon(this);
         isUseFeature = weapon.isUseFeature();
         return string;
     }
-
 }

@@ -2,31 +2,35 @@ package utilTest;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import util.Constant;
+import util.RandomGenerator;
 
-import java.util.HashSet;
 import java.util.Random;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.when;
 
 public class RandomGeneratorTest {
-    private util.RandomGenerator randomGenerator;
+    private RandomGenerator randomGenerator;
+
+    @Mock
+    private Random random;
+
     @Before
-    public void setUp() throws Exception {
-        randomGenerator = new util.RandomGenerator( new Random());
+    public void setUp() {
+        MockitoAnnotations.initMocks( this );
+        randomGenerator = new RandomGenerator( random );
     }
 
     @Test
-    public void test_random_number_is_random_in_5_times() throws Exception {
-        HashSet<Integer> randomNumbers = new HashSet<Integer>( );
-        int times = 5;
+    public void test_random_number()  {
 
-        while ( times > 0 ) {
-            randomNumbers.add(randomGenerator.generateRandomNumber());
-            times --;
-        }
+        when( random.nextInt( Constant.RANDOM_MAX ) ).thenReturn( 4 );
 
-        assertThat( randomNumbers.size(), is( 5 ));
+        assertThat( randomGenerator.generateRandomNumber(), is( 4 ));
     }
 
 }

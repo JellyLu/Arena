@@ -12,11 +12,12 @@ public class PlayGame {
         this.consoleLog = consoleLog;
     }
 
-    public void playGame(Player playerA, Player playerB ){
+    public void playGame(Player playerA, Player playerB ) throws Exception{
         Player attacker = playerA;
         Player victim   = playerB;
         Player loser;
         while ( attacker.isAlive() && victim.isAlive()  ){
+
             consoleLog.log( attacker.beat( victim ) );
             if ( victim.getAttackState() ){
                 loser = victim;

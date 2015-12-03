@@ -1,4 +1,4 @@
-package entity.weapon;
+package entity.weapon.armor;
 
 public class NoArmor extends Armor {
 
