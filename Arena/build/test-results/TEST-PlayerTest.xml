@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PlayerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2015-11-30T08:16:45" hostname="Miss-Lu-MBP.lan" time="0.006">
+  <properties/>
+  <testcase name="should_return_who_beat_vicitm_and_how_much_life_count_victim_left" classname="PlayerTest" time="0.001"/>
+  <testcase name="should_create_player_successful" classname="PlayerTest" time="0.0"/>
+  <testcase name="should_player_is_alive_when_life_count_equal_t0_0" classname="PlayerTest" time="0.0"/>
+  <testcase name="player_beat_soldier_when_soldier_with_armor" classname="PlayerTest" time="0.001"/>
+  <testcase name="should_beat_other" classname="PlayerTest" time="0.0"/>
+  <testcase name="player_beat_soldier_when_soldier_without_weapon_and_armor" classname="PlayerTest" time="0.0"/>
+  <testcase name="should_player_whole_damage_equal_to_damage" classname="PlayerTest" time="0.0"/>
+  <testcase name="should_player_is_alive_when_life_count_bigger_than_0" classname="PlayerTest" time="0.0"/>
+  <testcase name="should_player_role_is_people" classname="PlayerTest" time="0.0"/>
+  <testcase name="should_player_is_dead_when_life_count_less_than_0" classname="PlayerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
