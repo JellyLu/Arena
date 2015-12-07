@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="entityTest.weaponTest.featureTest.AllEffortFeatureTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2015-12-07T08:23:26" hostname="Miss-Lu-MBP.lan" time="0.001">
+  <properties/>
+  <testcase name="test_default_last_attack_count" classname="entityTest.weaponTest.featureTest.AllEffortFeatureTest" time="0.001"/>
+  <testcase name="test_feature_effect" classname="entityTest.weaponTest.featureTest.AllEffortFeatureTest" time="0.0"/>
+  <testcase name="test_feature_type" classname="entityTest.weaponTest.featureTest.AllEffortFeatureTest" time="0.0"/>
+  <testcase name="test_get_name" classname="entityTest.weaponTest.featureTest.AllEffortFeatureTest" time="0.0"/>
+  <testcase name="test_damage_type_equal_to_default" classname="entityTest.weaponTest.featureTest.AllEffortFeatureTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

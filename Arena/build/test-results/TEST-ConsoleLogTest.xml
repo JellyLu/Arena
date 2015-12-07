@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ConsoleLogTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-11-30T08:16:45" hostname="Miss-Lu-MBP.lan" time="0.001">
+<testsuite name="ConsoleLogTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-12-07T08:23:25" hostname="Miss-Lu-MBP.lan" time="0.001">
   <properties/>
   <testcase name="should_console_log_sepecial_characters" classname="ConsoleLogTest" time="0.0"/>
   <testcase name="should_console_log_string_i_want" classname="ConsoleLogTest" time="0.0"/>

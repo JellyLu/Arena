@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InOrder;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import util.ConsoleLog;
 import util.Constant;
@@ -17,8 +16,7 @@ import util.RandomGenerator;
 
 import java.util.Random;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 public class PlayGameTest {
@@ -30,7 +28,7 @@ public class PlayGameTest {
     @Before
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-        inOrder    = Mockito.inOrder( consoleLog );
+        inOrder    = inOrder( consoleLog );
         playGame   = new PlayGame( consoleLog );
     }
 
@@ -79,9 +77,9 @@ public class PlayGameTest {
 
     @Test
     public void should_play_game_soldier_win_when_soldier_use_weapon_wit_poison_feature() throws Exception{
-        Player victim    = new Player(  "李四", 20, 8 );
+        Player  victim    = new Player(  "李四", 20, 8 );
         Soldier attacker = new Soldier(  "张三", 20, 6 );
-        Random random    = mock( Random.class );
+        Random  random    = mock( Random.class );
         MiddleWeapon  weapon   = new MiddleWeapon(  "剑", 3, new RandomGenerator( random ) );
         weapon.setFeature( new PoisonFeature() );
 

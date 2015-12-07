@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="entityTest.playerTest.KnightTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2015-12-07T08:23:25" hostname="Miss-Lu-MBP.lan" time="0.05">
+  <properties/>
+  <testcase name="should_knight_beat_player_with_weapon_with_ice_feature_without_armor" classname="entityTest.playerTest.KnightTest" time="0.003"/>
+  <testcase name="should_knight_beat_player_with_weapon_without_feature_without_armor" classname="entityTest.playerTest.KnightTest" time="0.006"/>
+  <testcase name="should_damage_increase_after_knight_wear_weapon" classname="entityTest.playerTest.KnightTest" time="0.005"/>
+  <testcase name="should_knight_beat_player_with_weapon_with_fire_feature_without_armor" classname="entityTest.playerTest.KnightTest" time="0.001"/>
+  <testcase name="should_knight_beat_player_with_weapon_with_poison_feature_without_armor" classname="entityTest.playerTest.KnightTest" time="0.008"/>
+  <testcase name="should_knight_beat_player_with_weapon_with_all_effort_feature_without_armor" classname="entityTest.playerTest.KnightTest" time="0.003"/>
+  <testcase name="not_throw_exception_when_knight_wear_long_weapon" classname="entityTest.playerTest.KnightTest" time="0.001"/>
+  <testcase name="should_knight_defence_player_with_armor" classname="entityTest.playerTest.KnightTest" time="0.0"/>
+  <testcase name="not_throw_exception_when_knight_wear_middle_weapon" classname="entityTest.playerTest.KnightTest" time="0.001"/>
+  <testcase name="should_damage_not_change_after_knight_wear_armor" classname="entityTest.playerTest.KnightTest" time="0.006"/>
+  <testcase name="should_knight_beat_player_with_weapon_with_dizzy_feature_without_armor" classname="entityTest.playerTest.KnightTest" time="0.005"/>
+  <testcase name="throw_exception_when_knight_wear_short_weapon" classname="entityTest.playerTest.KnightTest" time="0.001"/>
+  <testcase name="should_knight_beat_player_without_weapon_and_armor" classname="entityTest.playerTest.KnightTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

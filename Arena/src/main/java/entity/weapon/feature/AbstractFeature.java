@@ -11,11 +11,7 @@ public abstract class AbstractFeature {
     }
 
     public int getLastAttackCount(){
-        return lastAttackCount;
-    }
-
-    public void setLastAttackCount( int lastAttackCount ){
-        this.lastAttackCount = lastAttackCount;
+        return getDamage().getLastAttackCount();
     }
 
     public void increaseLastAttackCount(){

@@ -13,7 +13,6 @@ import util.RandomGenerator;
 
 import java.util.Random;
 
-
 public class MainClass {
 
     public static void main( String[] args) throws Exception{
@@ -35,7 +34,6 @@ public class MainClass {
         }catch ( IllWeaponTypeException e ){
             e.printStackTrace();
         }
-
     }
 
 }

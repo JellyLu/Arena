@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="entityTest.weaponTest.weaponTest.WeaponTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-12-07T08:23:26" hostname="Miss-Lu-MBP.lan" time="0.015">
+  <properties/>
+  <testcase name="when_use_weapon_damage_lose_bleed" classname="entityTest.weaponTest.weaponTest.WeaponTest" time="0.0"/>
+  <testcase name="when_use_weapon_with_poison_feature_return_string" classname="entityTest.weaponTest.weaponTest.WeaponTest" time="0.001"/>
+  <testcase name="when_use_weapon_without_feature_return_string" classname="entityTest.weaponTest.weaponTest.WeaponTest" time="0.003"/>
+  <testcase name="when_use_weapon_with_fire_feature_return_string" classname="entityTest.weaponTest.weaponTest.WeaponTest" time="0.003"/>
+  <testcase name="when_use_weapon_with_dizzy_feature_return_string" classname="entityTest.weaponTest.weaponTest.WeaponTest" time="0.003"/>
+  <testcase name="when_use_weapon_with_ice_feature_return_string" classname="entityTest.weaponTest.weaponTest.WeaponTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

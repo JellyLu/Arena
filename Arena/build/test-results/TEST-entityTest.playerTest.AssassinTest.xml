@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="entityTest.playerTest.AssassinTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2015-12-07T08:23:25" hostname="Miss-Lu-MBP.lan" time="0.132">
+  <properties/>
+  <testcase name="should_damage_increase_after_assassin_wear_weapon" classname="entityTest.playerTest.AssassinTest" time="0.088"/>
+  <testcase name="should_assassin_beat_player_with_weapon_with_all_effort_feature_without_armor" classname="entityTest.playerTest.AssassinTest" time="0.006"/>
+  <testcase name="should_damage_not_change_after_assassin_wear_armor" classname="entityTest.playerTest.AssassinTest" time="0.005"/>
+  <testcase name="should_assassin_beat_player_with_weapon_with_ice_feature_without_armor" classname="entityTest.playerTest.AssassinTest" time="0.002"/>
+  <testcase name="should_assassin_beat_player_with_weapon_with_poison_feature_without_armor" classname="entityTest.playerTest.AssassinTest" time="0.003"/>
+  <testcase name="should_assassin_beat_player_with_weapon_with_fire_feature_without_armor" classname="entityTest.playerTest.AssassinTest" time="0.005"/>
+  <testcase name="should_assassin_beat_player_with_weapon_with_dizzy_feature_without_armor" classname="entityTest.playerTest.AssassinTest" time="0.002"/>
+  <testcase name="should_assassin_beat_player_without_weapon_and_armor" classname="entityTest.playerTest.AssassinTest" time="0.003"/>
+  <testcase name="throw_exception_when_assassin_wear_short_weapon" classname="entityTest.playerTest.AssassinTest" time="0.002"/>
+  <testcase name="should_assassin_defence_player_with_armor" classname="entityTest.playerTest.AssassinTest" time="0.001"/>
+  <testcase name="not_throw_exception_when_assassin_wear_short_weapon" classname="entityTest.playerTest.AssassinTest" time="0.002"/>
+  <testcase name="not_throw_exception_when_assassin_wear_middle_weapon" classname="entityTest.playerTest.AssassinTest" time="0.002"/>
+  <testcase name="should_assassin_beat_player_with_weapon_without_feature_without_armor" classname="entityTest.playerTest.AssassinTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

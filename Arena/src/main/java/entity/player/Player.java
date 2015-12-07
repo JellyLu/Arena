@@ -111,39 +111,40 @@ public class Player implements Role {
     }
 
     private String resultString( Player attacker, int loseLifeCount ){
-        String result = "";
+        String result;
         switch (  attacker.getDamage().getDamageType() ){
-            case Constant.DAMAGE_TYPE_LOSE_BLEED:
-                result = String.format( "%s受到了%d点伤害,%s%s,%s剩余生命值:%d\n", name, loseLifeCount,name, attacker.getDamageEffect(), name, lifeCount);
+            case Constant.DAMAGE_TYPE_LOSE_BLEED: {
+                result = String.format("%s受到了%d点伤害,%s%s,%s剩余生命值:%d\n", name, loseLifeCount, name, attacker.getDamageEffect(), name, lifeCount);
                 lifeCount -= attacker.getDamage().getBleed();
-                result += String.format("%s受到了%d点%s,%s剩余生命值:%d\n", name,attacker.getDamage().getBleed(), attacker.getDamageType(), name, lifeCount);
+                result += String.format("%s受到了%d点%s,%s剩余生命值:%d\n", name, attacker.getDamage().getBleed(), attacker.getDamageType(), name, lifeCount);
                 break;
-
-            case  Constant.DAMAGE_TYPE_CAN_NOT_ATTACK_TWICE:
+            }
+            case  Constant.DAMAGE_TYPE_CAN_NOT_ATTACK_TWICE: {
                 cannotAttackTimes = attacker.getDamage().getCannotDamageTimes();
-                result = String.format( "%s受到了%d点伤害,%s%s,%s剩余生命值:%d\n", name, loseLifeCount, name, attacker.getDamageEffect(),  name, lifeCount);
-                result += String.format("%s%s,%s眩晕还剩:%d轮\n", name, attacker.getDamageEffect(), getAttackStateLogString(attackState),attacker.getDamage().getLastAttackCount() );
+                result = String.format("%s受到了%d点伤害,%s%s,%s剩余生命值:%d\n", name, loseLifeCount, name, attacker.getDamageEffect(), name, lifeCount);
+                result += String.format("%s%s,%s眩晕还剩:%d轮\n", name, attacker.getDamageEffect(), getAttackStateLogString(attackState), attacker.getDamage().getLastAttackCount());
                 break;
-
-            case Constant.DAMAGE_TYPE_TWICE_CAN_NOT_ATTACK_ONCE:
+            }
+            case Constant.DAMAGE_TYPE_TWICE_CAN_NOT_ATTACK_ONCE: {
                 cannotAttackTimes = attacker.getDamage().getCannotDamageTimes();
-                result = String.format( "%s受到了%d点伤害,%s%s,%s剩余生命值:%d\n", name, loseLifeCount, name, attacker.getDamageEffect(),  name, lifeCount);
+                result = String.format("%s受到了%d点伤害,%s%s,%s剩余生命值:%d\n", name, loseLifeCount, name, attacker.getDamageEffect(), name, lifeCount);
                 break;
-
-            case Constant.DAMAGE_TYPE_TRIPLE_DAMAGE:
+            }
+            case Constant.DAMAGE_TYPE_TRIPLE_DAMAGE: {
                 lifeCount = lifeCount + loseLifeCount;
-                loseLifeCount = loseLifeCount*attacker.damage.getBeMultipleDamaged();
+                loseLifeCount = loseLifeCount * attacker.damage.getBeMultipleDamaged();
                 lifeCount -= loseLifeCount;
                 result = String.format("%s%s,%s受到了%d点伤害,%s剩余生命值:%d\n", attacker.getName(), attacker.getDamageEffect(), name, loseLifeCount, name, lifeCount);
                 break;
-
-            case Constant.DAMAGE_TYPE_NO_DAMAGE:
-                result = String.format( "%s受到了%d点伤害,%s剩余生命值:%d\n", name, loseLifeCount, name, lifeCount);
+            }
+            case Constant.DAMAGE_TYPE_NO_DAMAGE: {
+                result = String.format("%s受到了%d点伤害,%s剩余生命值:%d\n", name, loseLifeCount, name, lifeCount);
                 break;
-
-            default:
-                result = String.format( "%s受到了%d点伤害,%s剩余生命值:%d\n", name, loseLifeCount, name, lifeCount);
+            }
+            default: {
+                result = String.format("%s受到了%d点伤害,%s剩余生命值:%d\n", name, loseLifeCount, name, lifeCount);
                 break;
+            }
         }
         return result;
     }

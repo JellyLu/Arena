@@ -3,7 +3,6 @@ package entity.weapon.weapon;
 import entity.player.Player;
 import entity.player.Role;
 import entity.weapon.damage.Damage;
-import entity.weapon.damage.NoDamage;
 import entity.weapon.feature.Feature;
 import entity.weapon.feature.NoFeature;
 import util.Constant;
@@ -12,8 +11,6 @@ import util.RandomGenerator;
 
 public class Weapon implements Role{
     protected String  name;
-    private Damage  featureDamage;
-    private String  featureEffect;
     private   int     bleed;
     protected Feature feature;
     protected boolean isUseFeature = false;
@@ -23,8 +20,6 @@ public class Weapon implements Role{
         this.name            = name;
         this.bleed           = bleed;
         this.feature         = NoFeature.getInstance();
-        this.featureDamage   = NoDamage.getInstance();
-        this.featureEffect   = feature.featureEffect();
         this.randomGenerator = randomGenerator;
     }
 
@@ -39,12 +34,10 @@ public class Weapon implements Role{
     public void setFeature(Feature feature) {
 
         this.feature       = feature;
-        this.featureDamage = feature.getDamage();
-        this.featureEffect = feature.featureEffect();
     }
 
     public String getFeatureEffect() {
-        return featureEffect;
+        return feature.featureEffect();
     }
 
     public String getName() {
@@ -56,7 +49,7 @@ public class Weapon implements Role{
     }
 
     public Damage getFeatureDamage() {
-        return featureDamage;
+        return feature.getDamage();
     }
 
     public int getBleed(){
@@ -84,7 +77,7 @@ public class Weapon implements Role{
 
     protected String useFeature(){
         feature.useFeature( isUseFeature );
-        featureDamage.setLastAttackCount( feature.getLastAttackCount() );
+        getFeatureDamage().setLastAttackCount( feature.getLastAttackCount() );
         return String.format( "用%s%s", feature.getName(), name  );
     }
 

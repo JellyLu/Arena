@@ -9,6 +9,7 @@ public class Feature extends AbstractFeature {
         super();
         this.lastAttackCount = getDamageTimes();
         this.damage = new Damage();
+        this.damage.setLastAttackCount( this.lastAttackCount );
     }
 
     public int getDamageType(){

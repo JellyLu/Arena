@@ -9,7 +9,6 @@ public class Damage {
     private int damageType;//= Constant.DAMAGE_TYPE_NO_DAMAGE;
     private int beMultipleDamaged;// = 1; //被攻击的伤害倍数
     private int damageTimes;// = 0;
-
     private int lastAttackCount;
 
     public Damage(){

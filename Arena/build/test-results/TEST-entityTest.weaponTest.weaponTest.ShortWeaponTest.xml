@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="entityTest.weaponTest.weaponTest.ShortWeaponTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-12-07T08:23:26" hostname="Miss-Lu-MBP.lan" time="0.005">
+  <properties/>
+  <testcase name="throw_exception_when_knight_use_long_weapon_feature" classname="entityTest.weaponTest.weaponTest.ShortWeaponTest" time="0.001"/>
+  <testcase name="throw_exception_when_soldier_use_long_weapon_feature" classname="entityTest.weaponTest.weaponTest.ShortWeaponTest" time="0.001"/>
+  <testcase name="not_throw_exception_when_assassin_use_long_weapon_feature" classname="entityTest.weaponTest.weaponTest.ShortWeaponTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
