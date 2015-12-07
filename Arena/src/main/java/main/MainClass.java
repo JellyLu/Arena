@@ -4,6 +4,7 @@ package main;
 import entity.player.Player;
 import entity.player.Soldier;
 import entity.weapon.feature.PoisonFeature;
+import entity.weapon.weapon.MiddleWeapon;
 import entity.weapon.weapon.Weapon;
 import game.PlayGame;
 import util.ConsoleLog;
@@ -20,7 +21,7 @@ public class MainClass {
         Soldier soldier  = new Soldier( "张三", 20, 5 );
       //soldier.wearArmor( new Armor( Constant.ARMOR_GOLDSOFT, 4));
 
-        Weapon weapon = new Weapon( Constant.WEAPON_SWORD, 3, new RandomGenerator( new Random() ));
+        Weapon weapon = new MiddleWeapon( Constant.WEAPON_SWORD, 3, new RandomGenerator( new Random() ));
         weapon.setFeature( new PoisonFeature() );
       //weapon.setFeature( new DizzyFeature() );
         // weapon.setFeature( new AllEffortFeature() );
